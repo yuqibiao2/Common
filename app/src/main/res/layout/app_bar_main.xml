@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/base_tb">
+
+            <ImageButton
+                android:id="@+id/ib_nav_lit"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:onClick="toggleNav"
+                android:src="@mipmap/nav_list" />
+
+            <TextView
+                style="@style/base_tv"
+                android:text="@string/app_name"
+                android:textColor="@color/colorWhite" />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+</android.support.design.widget.CoordinatorLayout>

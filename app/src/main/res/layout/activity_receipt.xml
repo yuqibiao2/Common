@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_submit"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tb_receipt"
+            style="@style/base_tb" >
+            <ImageButton
+                android:id="@+id/ib_nav_lit"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:onClick="back"
+                android:src="@mipmap/nav_back" />
+
+            <TextView
+                style="@style/base_tv"
+                android:text="@string/receipt_tb_title"
+                android:textColor="@color/colorWhite"/>
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                style="@style/base_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/useless_tag" />
+
+            <TextView
+                android:id="@+id/tv_useless_tag"
+                style="@style/base_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/useless_tag_num"
+                android:textColor="@color/colorAccent" />
+        </LinearLayout>
+
+
+        <TextView
+            style="@style/base_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:text="@string/receipt_result_tip"
+            android:textColor="#787878" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_warehouse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_submit"
+        style="@style/base_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="10dp"
+        android:onClick="saveReceipt"
+        android:text="@string/receipt_submit" />
+
+</RelativeLayout>

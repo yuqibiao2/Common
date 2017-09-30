@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">Linen Inventory System</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!--global-->
+    <string name="net_error">Network connection is abnormal, please check the network!</string>
+    <string name="swing_disconnect">SwingU disconnect！</string>
+    <string name="swing_connected">SwingU connected！</string>
+    <string name="swing_connect_yourself">Please connect your own handset</string>
+    <string name="data_loading">data loading...</string>
+
+    <!--login-->
+    <string name="hint_username">username</string>
+    <string name="hint_pwd">password</string>
+    <string name="hint_login_btn">login</string>
+    <string name="lg_input_empty_tip">The input has a null value！</string>
+    <string name="lg_factory_name_error">Factory name is incorrect！</string>
+    <string name="lg_username_or_pwd_error">username or password incorrect！</string>
+    <string name="lg_loading_tip">logging in... </string>
+    <string name="login">login</string>
+    <string name="login_success">login success</string>
+
+    <!--main activity-->
+    <string name="main_exit_tip">Press again to exit the system</string>
+    <string name="main_tb_title_manager">Linen Inventory System</string>
+    <string name="main_tb_title_place_order">place an order</string>
+
+    <!--left drawer menu -->
+    <string name="dw_menu_linen_manager">Inventory Manager</string>
+    <string name="dw_menu_print_test">test printer</string>
+    <string name="dw_menu_device_connect">handset connect</string>
+    <string name="dw_menu_others">others</string>
+    <string name="dw_menu_exit">sign out</string>
+
+    <!--receipt activity-->
+    <string name="receipt_tb_title">add receipt</string>
+    <string name="useless_tag">Number of useless tags：</string>
+    <string name="useless_tag_num">none</string>
+    <string name="receipt_result_tip">Count the result：</string>
+    <string name="receipt_submit">confirm submission</string>
+
+    <!--printer info-->
+    <string name="receipt_tip">-------------Inventory order------------</string>
+    <string name="receipt_tip_repeat">--------Inventory order（repeat）---------</string>
+    <string name="receipt_id">serial number：</string>
+    <string name="receipt_user">username：</string>
+    <string name="receipt_warehouse">warehouse：</string>
+    <string name="receipt_customer_sign">customer signature________________________</string>
+    <string name="receipt_arfid">----www.arfid.co(阿菲德)------</string>
+    <string name="receipt_alter_title">submit result</string>
+    <string name="receipt_alter_msg">submit success！\r\Please confirm whether the receipt was successfully printed，If not, please click the reprint button</string>
+    <string name="receipt_alter_pos">Print the receipt again</string>
+    <string name="receipt_alter_nev">Continue scanning</string>
+    <string name="receipt_submit_failed">Submission failed, please resubmit!</string>
+
+    <!--bt device scan activity-->
+    <string name="bt_setting">BT setting</string>
+
+    <!--linen scan activity-->
+    <string name="scan_tb_title">Linen Scan</string>
+    <string name="scan_warehouse">current warehouse is：</string>
+    <string name="scan_start">start scan</string>
+    <string name="scan_stop">stop scan</string>
+
+</resources>

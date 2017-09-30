@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">布草盘存系统</string>
+
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!--global-->
+    <string name="net_error">网络连接异常，请检查网络！</string>
+    <string name="swing_disconnect">手持机未连接！</string>
+    <string name="swing_connected">手持机已连接！</string>
+    <string name="swing_connect_yourself">请连接您自己的手持机！</string>
+    <string name="data_loading">数据加载中....</string>
+
+    <!--login-->
+    <string name="hint_username">用户名：</string>
+    <string name="hint_pwd">密　码：</string>
+    <string name="hint_login_btn">登录</string>
+    <string name="lg_input_empty_tip">输入存在空值！！</string>
+    <string name="lg_factory_name_error">工厂名不正确！</string>
+    <string name="lg_username_or_pwd_error">用户名或密码不正确！</string>
+    <string name="lg_loading_tip">登录中... </string>
+    <string name="login">登  录</string>
+    <string name="login_success">登陆成功</string>
+
+    <!--main activity-->
+    <string name="main_exit_tip">再按一次退出系统</string>
+    <string name="main_tb_title_manager">布草管理系统</string>
+    <string name="main_tb_title_place_order">下单</string>
+
+    <!--left drawer menu -->
+    <string name="dw_menu_linen_manager">布草管理</string>
+    <string name="dw_menu_print_test">打印机测试</string>
+    <string name="dw_menu_device_connect">设备连接</string>
+    <string name="dw_menu_others">其它</string>
+    <string name="dw_menu_exit">退出登录</string>
+
+    <!--receipt activity-->
+    <string name="receipt_tb_title">添加收据</string>
+    <string name="useless_tag">无用标签的数量有：</string>
+    <string name="useless_tag_num">无</string>
+    <string name="receipt_result_tip">盘点结果为：</string>
+    <string name="receipt_submit">确认提交</string>
+
+    <!--printer info-->
+    <string name="receipt_tip">-------------盘存单------------</string>
+    <string name="receipt_tip_repeat">--------盘存单（重印）---------</string>
+    <string name="receipt_id">流水号：</string>
+    <string name="receipt_user">提交人姓名：</string>
+    <string name="receipt_warehouse">仓库：</string>
+    <string name="receipt_customer_sign">客户签字________________________</string>
+    <string name="receipt_arfid">------www.arfid.co(阿菲德)------</string>
+    <string name="receipt_alter_title">提交结果</string>
+    <string name="receipt_alter_msg">提交成功！\r\n请确认收据是否成功打印，如果没打印请点击重新打印按钮。</string>
+    <string name="receipt_alter_pos">再次打印收据</string>
+    <string name="receipt_alter_nev">继续扫描</string>
+    <string name="receipt_submit_failed">提交失败，请重新提交！</string>
+
+    <!--bt device scan activity-->
+    <string name="bt_setting">蓝牙设置</string>
+
+    <!--linen scan activity-->
+    <string name="scan_tb_title">布草扫描</string>
+    <string name="scan_warehouse">当前仓库为：</string>
+    <string name="scan_start">开始扫描</string>
+    <string name="scan_stop">结束扫描</string>
+
+</resources>
