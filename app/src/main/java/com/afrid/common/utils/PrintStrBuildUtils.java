@@ -58,7 +58,7 @@ public class PrintStrBuildUtils {
             for (int i = 0; i <8-tagTypeName.length() ; i++) {
                 sb.append("　");
             }
-            sb.append("--------------x" + bean.getTagNum()+"\n");
+            sb.append("----------x" + bean.getTagNum()+"\n");
             sb.append("\n");
         }
         sb.append("\n");

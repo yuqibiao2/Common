@@ -40,12 +40,15 @@
     </style>
 
     <!--ToolBar-->
-    <!--<style name="base_tb">
+    <style name="base_tb">
+        <item name="contentInsetLeft">0dp</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/base_tb_height</item>
         <item name="android:background">?attr/colorPrimary</item>
         <item name="android:layout_gravity">center</item>
-    </style>-->
+    </style>
 
     <style name="base_tv">
         <item name="android:layout_width">wrap_content</item>
@@ -54,7 +57,7 @@
     </style>
 
     <style name="base_menu">
-      <!--  <item name="android:textSize">@dimen/base_tv_size</item>-->
+        <!--  <item name="android:textSize">@dimen/base_tv_size</item>-->
     </style>
 
 </resources>

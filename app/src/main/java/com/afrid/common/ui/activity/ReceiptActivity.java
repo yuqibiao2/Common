@@ -42,8 +42,8 @@ import rx.Subscription;
 public class ReceiptActivity extends MyBaseActivity {
 
     private static final String TAG = "ReceiptActivity";
-    public  static final int RECEIPT_REQUEST_CODE = 1001;
-    public  static final int RECEIPT_RESULT_CODE = 1002;
+    public static final int RECEIPT_REQUEST_CODE = 1001;
+    public static final int RECEIPT_RESULT_CODE = 1002;
 
     @BindView(R.id.tv_useless_tag)
     TextView tv_useless_tag;
@@ -113,7 +113,7 @@ public class ReceiptActivity extends MyBaseActivity {
                     adapter.setmData(result.getResultData().getMIxTagLinenList());
                     tv_useless_tag.setText("" + result.getResultData().getUselessTag().getTagNum());
                 } else if (resultCode == 500) {
-
+                    MyToast.showShort(ReceiptActivity.this, "服务器错误");
                 }
                 hiddenLoadingDialog();
             }
@@ -121,6 +121,21 @@ public class ReceiptActivity extends MyBaseActivity {
             @Override
             public void onFailure(Throwable throwable) {
                 MyLog.e(TAG, "异常==" + throwable.getMessage());
+                //网络加载失败
+                AlertDialog alertDialog = new AlertDialog.Builder(ReceiptActivity.this)
+                        .setCancelable(true)
+                        .setTitle(resourceUtils.getStr(R.string.receipt_alter_title) + "\r\n")
+                        .setMessage(resourceUtils.getStr(R.string.receipt_alter_msg_failed))
+                        .setNegativeButton(resourceUtils.getStr(R.string.receipt_alter_retry),
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        initData();
+                                    }
+                                })
+                        .create();
+                alertDialog.show();
+                hiddenLoadingDialog();
             }
         });
     }
@@ -135,7 +150,7 @@ public class ReceiptActivity extends MyBaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void back(View view){
+    public void back(View view) {
         finish();
     }
 
@@ -169,7 +184,7 @@ public class ReceiptActivity extends MyBaseActivity {
                     final String mainId = result.getResultData();
                     AlertDialog alertDialog = new AlertDialog.Builder(ReceiptActivity.this)
                             .setCancelable(false)
-                            .setTitle(resourceUtils.getStr(R.string.receipt_alter_title)+"\r\n")
+                            .setTitle(resourceUtils.getStr(R.string.receipt_alter_title) + "\r\n")
                             .setMessage(resourceUtils.getStr(R.string.receipt_alter_msg))
                             .setNegativeButton(resourceUtils.getStr(R.string.receipt_alter_nev), new DialogInterface.OnClickListener() {
                                 @Override
@@ -181,14 +196,14 @@ public class ReceiptActivity extends MyBaseActivity {
                             .setPositiveButton(resourceUtils.getStr(R.string.receipt_alter_pos), new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-                                    String printStr = PrintStrBuildUtils.buildReceipt(ReceiptActivity.this , true , application.getUser_name(),
+                                    String printStr = PrintStrBuildUtils.buildReceipt(ReceiptActivity.this, true, application.getUser_name(),
                                             warehouseName, mainId, ReceiptActivity.this.resultData.getMIxTagLinenList());
                                     zkcManager.getPrintManager().printText(printStr);
                                 }
                             })
                             .create();
                     alertDialog.show();
-                    String printStr = PrintStrBuildUtils.buildReceipt(ReceiptActivity.this , false , application.getUser_name(),
+                    String printStr = PrintStrBuildUtils.buildReceipt(ReceiptActivity.this, false, application.getUser_name(),
                             warehouseName, mainId, ReceiptActivity.this.resultData.getMIxTagLinenList());
                     zkcManager.getPrintManager().printText(printStr);
                 } else {
@@ -212,11 +227,15 @@ public class ReceiptActivity extends MyBaseActivity {
 
     @Override
     protected void onDestroy() {
-        zkcManager.unbindService();
-        if (tagInfoListSubscription!=null&&!tagInfoListSubscription.isUnsubscribed()){
+        try {
+            zkcManager.unbindService();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (tagInfoListSubscription != null && !tagInfoListSubscription.isUnsubscribed()) {
             tagInfoListSubscription.unsubscribe();
         }
-        if (saveReceiptSubscription!=null&&!saveReceiptSubscription.isUnsubscribed()){
+        if (saveReceiptSubscription != null && !saveReceiptSubscription.isUnsubscribed()) {
             saveReceiptSubscription.unsubscribe();
         }
         super.onDestroy();
@@ -228,7 +247,7 @@ public class ReceiptActivity extends MyBaseActivity {
      * @param activity
      * @param getTagInfoRequest GetTagInfoRequest转化的json
      */
-    public static void startAction(Activity activity, String getTagInfoRequest , String warehouseName) {
+    public static void startAction(Activity activity, String getTagInfoRequest, String warehouseName) {
         Intent intent = new Intent(activity, ReceiptActivity.class);
         intent.putExtra("getTagInfoRequest", getTagInfoRequest);
         intent.putExtra("warehouseName", warehouseName);
@@ -242,11 +261,11 @@ public class ReceiptActivity extends MyBaseActivity {
      * @param getTagInfoRequest
      * @param warehouseName
      */
-    public static void startActionForResult(Activity activity, String getTagInfoRequest , String warehouseName){
+    public static void startActionForResult(Activity activity, String getTagInfoRequest, String warehouseName) {
         Intent intent = new Intent(activity, ReceiptActivity.class);
         intent.putExtra("getTagInfoRequest", getTagInfoRequest);
         intent.putExtra("warehouseName", warehouseName);
-        activity.startActivityForResult(intent , RECEIPT_REQUEST_CODE);
+        activity.startActivityForResult(intent, RECEIPT_REQUEST_CODE);
     }
 
 }

@@ -97,11 +97,11 @@ public class ScanLinenActivity extends MyBaseActivity {
     public void startScan(View view) {
         tagIdSet.clear();
         //---判断设备是否为用户绑定的
-        if (!application.getReaderIdList().contains(application.getCurrentReaderId())) {
+        /*if (!application.getReaderIdList().contains(application.getCurrentReaderId())) {
             MyToast.showShort(this, resourceUtils.getStr(R.string.swing_connect_yourself));
             BTDeviceScanActivity.startAction(this);
             return;
-        }
+        }*/
 
         if (!SwingUManager.getInstance(this).isConnected()) {
             MyToast.showShort(this, resourceUtils.getStr(R.string.swing_disconnect));
@@ -120,6 +120,9 @@ public class ScanLinenActivity extends MyBaseActivity {
         wvScan.stop();
         swingUManager.stopReader();
         tagIdList = new ArrayList<>(tagIdSet);
+       /* for (int i = 0; i <5000 ; i++) {
+            tagIdList.add("1000000000000001"+i);
+        }*/
         GetTagInfoRequest request = new GetTagInfoRequest();
         request.setRequestData(tagIdList);
         ReceiptActivity.startActionForResult(this, mGson.toJson(request), warehouseName);

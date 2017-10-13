@@ -22,10 +22,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class APIFactory {
 
 
-    //public static final String BASE_URL="http://192.168.1.103:8080/ssh/";
-    public static final String BASE_URL="http://fangkalaundryapptest.chinacloudsites.cn";
+    //public static final String BASE_URL="http://192.168.33.109:8080/ssh/";
+    public static final String BASE_URL="http://39.108.109.86:8080/tag-manager/";
+    //public static final String BASE_URL="http://fangkalaundryapptest.chinacloudsites.cn";
 
-    private static final int DEFAULT_TIMEOUT = 5;
+    private static final int DEFAULT_TIMEOUT = 1;
 
     private Retrofit.Builder builder;
 
@@ -41,7 +42,9 @@ public class APIFactory {
         loggingInterceptor.setLevel(level);
         OkHttpClient.Builder httpClientBuild = new OkHttpClient.Builder();
         httpClientBuild.addInterceptor(loggingInterceptor);
-        httpClientBuild.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
+        httpClientBuild.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.MINUTES);
+        httpClientBuild.readTimeout(DEFAULT_TIMEOUT , TimeUnit.MINUTES);
+        httpClientBuild.writeTimeout(DEFAULT_TIMEOUT , TimeUnit.MINUTES);
         builder = new Retrofit.Builder()
                 .client(httpClientBuild.build())
                 .addConverterFactory(GsonConverterFactory.create())

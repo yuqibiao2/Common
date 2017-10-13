@@ -43,6 +43,7 @@ public class ZKCManager {
     }
 
 
+    private boolean isBind = false;
 
     public void bindService() {
         //com.zkc.aidl.all为远程服务的名称，不可更改
@@ -51,10 +52,13 @@ public class ZKCManager {
         Intent intent = new Intent("com.zkc.aidl.all");
         intent.setPackage("com.smartdevice.aidl");
         mContext.bindService(intent, mServiceConn, Context.BIND_AUTO_CREATE);
+        isBind = true;
     }
 
     public void unbindService() {
-        mContext.unbindService(mServiceConn);
+        if (isBind){
+            mContext.unbindService(mServiceConn);
+        }
     }
 
     public static IZKCService mIzkcService;

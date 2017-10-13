@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">布草盘存系统</string>
+    <!--<string name="app_name">布草盘存系统</string>-->
+    <string name="app_name">备品管理系统</string>
+    <string name="splash_title">客运信息管理系统\n——备品管理系统 </string>
 
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
@@ -54,8 +56,10 @@
     <string name="receipt_arfid">------www.arfid.co(阿菲德)------</string>
     <string name="receipt_alter_title">提交结果</string>
     <string name="receipt_alter_msg">提交成功！\r\n请确认收据是否成功打印，如果没打印请点击重新打印按钮。</string>
+    <string name="receipt_alter_msg_failed">网络异常，请重试</string>
     <string name="receipt_alter_pos">再次打印收据</string>
     <string name="receipt_alter_nev">继续扫描</string>
+    <string name="receipt_alter_retry">重试</string>
     <string name="receipt_submit_failed">提交失败，请重新提交！</string>
 
     <!--bt device scan activity-->

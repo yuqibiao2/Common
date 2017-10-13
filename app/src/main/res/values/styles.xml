@@ -31,8 +31,11 @@
 
     <!--ToolBar-->
     <style name="base_tb">
+        <item name="contentInsetLeft">0dp</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/base_tb_height</item>
+        <item name="android:layout_height">56dp</item>
         <item name="android:background">?attr/colorPrimary</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textColor">@color/colorWhite</item>
